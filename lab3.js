@@ -95,6 +95,15 @@ const analyticsData = [
   const getActiveUsers = (data) => {
     // TODO: use filter + map
     // Hint: First filter users with totalSessions >= 5, then map to get names
+    let array = [];
+
+    data.filter(user => {
+      if (user.totalSessions >= 5) {
+        array.push(user.name);
+      }
+    });
+
+    return array;
   };
   
   /**
