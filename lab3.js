@@ -39,6 +39,11 @@ const analyticsData = [
   const getEngagementLevel = (user) => {
     // TODO: use if/else or ternary operator
     // Hint: Check if user.avgSessionDuration >= 200
+    if (user.avgSessionDuration >= 200) {
+      return "Good";
+    } else {
+      return "Low";
+    }
   };
   
   /**
@@ -50,6 +55,17 @@ const analyticsData = [
   const findLongestSessionUser = (data) => {
     // TODO: use for loop
     // Hint: Keep track of max duration and corresponding user name
+    let longestAvgSessionDuration = 0;
+    let longestAvgSessionDurationUser = "";
+
+    data.forEach(user => {
+      if (user.avgSessionDuration > longestAvgSessionDuration) {
+        longestAvgSessionDuration = user.avgSessionDuration;
+        longestAvgSessionDurationUser = user.name;
+      }
+    });
+
+    return longestAvgSessionDurationUser;
   };
   
   /**
