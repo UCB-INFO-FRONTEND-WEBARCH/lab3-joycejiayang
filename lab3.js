@@ -115,6 +115,13 @@ const analyticsData = [
   const getTotalSessions = (data) => {
     // TODO: use reduce
     // Hint: Accumulate user.totalSessions
+    let total = 0;
+
+    data.forEach(user => {
+      total += user.totalSessions;
+    });
+
+    return total;
   };
   
   // ========================================
