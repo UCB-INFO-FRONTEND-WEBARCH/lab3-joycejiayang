@@ -77,6 +77,13 @@ const analyticsData = [
   const formatSessions = (data) => {
     // TODO: use map
     // Hint: Use template literal `${user.name}: ${user.totalSessions} sessions`
+    let array = [];
+
+    data.forEach(user => {
+      array.push(`${user.name}: ${user.totalSessions} sessions`);
+    });
+
+    return array;
   };
   
   /**
